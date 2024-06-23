@@ -1,5 +1,6 @@
-package com.techtask;
+package com.techtask.campagin;
 
+import com.techtask.keyword.Keyword;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +15,8 @@ public class Campaign {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id_campaign;
+    @Column(name = "id_campaign", nullable = false)
+    private Long idCampaign;
 
     @Column(nullable = false)
     private String name;
@@ -32,7 +33,7 @@ public class Campaign {
     private double bidAmount;
 
     @Column(nullable = false)
-    private double found;
+    private double fund;
 
     @Column(name = "status", nullable = false)
     private boolean isStatusOn;
@@ -44,5 +45,14 @@ public class Campaign {
 
     public Campaign(){
 
+    }
+
+    public Campaign(String name, double bidAmount, double fund, boolean isStatusOn, String town, int radiusKm) {
+        this.name = name;
+        this.bidAmount = bidAmount;
+        this.fund = fund;
+        this.isStatusOn = isStatusOn;
+        this.town = town;
+        this.radiusKm = radiusKm;
     }
 }

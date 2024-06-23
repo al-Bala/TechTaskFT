@@ -1,4 +1,4 @@
-package com.techtask;
+package com.techtask.campagin;
 
 import org.springframework.data.repository.CrudRepository;
 

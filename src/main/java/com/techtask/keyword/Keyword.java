@@ -1,5 +1,6 @@
-package com.techtask;
+package com.techtask.keyword;
 
+import com.techtask.campagin.Campaign;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +15,8 @@ public class Keyword {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private long id_keyword;
+    @Column(name = "id_keyword", nullable = false)
+    private long idKeyword;
 
     @Column(nullable = false)
     private String word;
@@ -25,5 +26,9 @@ public class Keyword {
 
     public Keyword(){
 
+    }
+
+    public Keyword(String word) {
+        this.word = word;
     }
 }
