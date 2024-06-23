@@ -4,6 +4,7 @@ import com.techtask.campagin.controller.dto.request.EditCampaignRequest;
 import com.techtask.campagin.controller.dto.request.NewCampaignRequest;
 import com.techtask.keyword.Keyword;
 import com.techtask.keyword.KeywordService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -43,5 +44,11 @@ public class CampaignService {
             campaignToEdit.setRadiusKm(request.radiusKm());
         }
         return campaignRepository.save(campaignToEdit);
+    }
+
+    @Transactional
+    public void deleteCampaign(Long id){
+        Campaign campaign = campaignRepository.findByIdCampaign(id).orElseThrow();
+        campaignRepository.delete(campaign);
     }
 }
