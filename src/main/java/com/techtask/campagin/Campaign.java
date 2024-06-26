@@ -55,4 +55,9 @@ public class Campaign {
         this.town = town;
         this.radiusKm = radiusKm;
     }
+
+    public Campaign(Long idCampaign, Set<Keyword> keywords) {
+        this.idCampaign = idCampaign;
+        this.keywords = keywords;
+    }
 }

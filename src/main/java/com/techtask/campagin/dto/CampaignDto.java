@@ -1,11 +1,15 @@
-package com.techtask.campagin.controller.dto.request;
+package com.techtask.campagin.dto;
 
-import org.hibernate.mapping.Array;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
-public record NewCampaignRequest(
+@Builder
+public record CampaignDto(
+        Long id,
         String name,
         Set<String> keywords,
         double bidAmount,
